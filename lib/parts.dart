@@ -1,3 +1,4 @@
+import 'package:databasetask2/pages/signUpPage.dart';
 import 'package:flutter/material.dart';
 
 class Parts {
@@ -64,19 +65,70 @@ class Parts {
     );
   }
 
-  Widget customButton(String label){
-    return Center(
-      child: Container(
-        height: 50,
-        width: 310,
-        decoration: BoxDecoration(
-          color: const Color(0xFF21464a),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child:  Center(
-          child: Text(label, style: const TextStyle(color: Colors.white, fontSize: 17),),
-        ),
+  // Widget customButton(String label) {
+  //   return
+  // }
+
+  Widget or() {
+    return Container(
+      padding: const EdgeInsets.only(left: 45),
+      child: Row(
+        children: [
+          Container(
+            width: 100,
+            color: const Color(0xFFe1e8e3),
+            height: 2,
+          ),
+          const SizedBox(width: 15,),
+          const Text(
+            'OR',
+            style: TextStyle(color: Color(0xFFe1e8e3), fontSize: 20),
+          ),
+          const SizedBox(width: 15,),
+          Container(
+            width: 100,
+            color: const Color(0xFFe1e8e3),
+            height: 2,
+          ),
+        ],
       ),
     );
   }
+
+  static Widget ask(BuildContext context, String text1, String text2) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          text1,
+          style: const TextStyle(color: Color(0xFFe1e8e3), fontSize: 20),
+        ),
+        GestureDetector(
+          onTap: () {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => SignUpPage(),
+            //   ),
+            // );
+          },
+          child: GestureDetector(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignUpPage(),
+                ),
+              );
+            },
+            child: Text(
+              text2,
+              style: const TextStyle(color: Colors.lightBlue, fontSize: 20),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
+
