@@ -24,10 +24,10 @@ class Parts {
     );
   }
 
-  Widget signInText() {
-    return const Text(
-      'Sign In',
-      style: TextStyle(
+  Widget signInText(String l) {
+    return  Text(
+      l,
+      style: const TextStyle(
           color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),
     );
   }
@@ -104,27 +104,17 @@ class Parts {
           style: const TextStyle(color: Color(0xFFe1e8e3), fontSize: 20),
         ),
         GestureDetector(
-          onTap: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => SignUpPage(),
-            //   ),
-            // );
+          onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SignUpPage(),
+              ),
+            );
           },
-          child: GestureDetector(
-            onTap: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SignUpPage(),
-                ),
-              );
-            },
-            child: Text(
-              text2,
-              style: const TextStyle(color: Colors.lightBlue, fontSize: 20),
-            ),
+          child: Text(
+            text2,
+            style: const TextStyle(color: Colors.lightBlue, fontSize: 20),
           ),
         ),
       ],

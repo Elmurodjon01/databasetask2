@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 8,
                 ),
-                Parts().signInText(),
+                Parts().signInText('Sign In'),
               ],
             ),
           ),
